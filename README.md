@@ -1,7 +1,8 @@
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/oegedijk/explainerdashboard/explainerdashboard/master?style=plastic)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/oegedijk/explainerdashboard/explainerdashboard.yml?branch=main)
 ![https://pypi.python.org/pypi/explainerdashboard/](https://img.shields.io/pypi/v/explainerdashboard.svg)
 ![https://anaconda.org/conda-forge/explainerdashboard/](https://anaconda.org/conda-forge/explainerdashboard/badges/version.svg)
 [![codecov](https://codecov.io/gh/oegedijk/explainerdashboard/branch/master/graph/badge.svg?token=0XU6HNEGBK)](undefined)
+[![Downloads](https://static.pepy.tech/badge/explainerdashboard)](https://pepy.tech/project/explainerdashboard)
 
 # explainerdashboard
 by: Oege Dijk
@@ -145,7 +146,25 @@ ExplainerDashboard(explainer).run()
 `y_test` is actually optional, although some parts of the dashboard like performance
 metrics will obviously not be available: `ExplainerDashboard(ClassifierExplainer(model, X_test)).run()`.
 
-You can export a dashboard to static html with `db.save_html('dashboard.html')`.
+You can export a dashboard to static html with `db.save_html('dashboard.html')`. 
+
+
+<details>
+<summary>You can pass a specific index for the static dashboard to display</summary>
+<p>
+
+```
+ExplainerDashboard(explainer, index=0).save_html('dashboard.html')
+```
+
+or 
+
+
+```
+ExplainerDashboard(explainer, index='Cumings, Mrs. John Bradley (Florence Briggs Thayer)').save_html('dashboard.html')
+```
+</p>
+</details>
 
 For a simplified single page dashboard try `ExplainerDashboard(explainer, simple=True)`.
 
@@ -568,3 +587,7 @@ Example notebook on how to design a custom dashboard: [custom_examples.ipynb](no
 You can find an example dashboard at [titanicexplainer.herokuapp.com](http://titanicexplainer.herokuapp.com) 
 
 (source code at [https://github.com/oegedijk/explainingtitanic](https://github.com/oegedijk/explainingtitanic))
+
+## Citation:
+
+A doi can be found at [zenodo](https://zenodo.org/record/7633294)
